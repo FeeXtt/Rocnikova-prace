@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://c34utnkk55xuu"]
+
+[ext_resource type="Script" uid="uid://ci2i3j0suy6sh" path="res://scripts/main_menu.gd" id="1_qwnig"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwnig"]
+bg_color = Color(0.502453, 0.617014, 0.70662, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+
+[node name="MainMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwnig")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -186.5
+offset_top = -165.5
+offset_right = 186.5
+offset_bottom = 165.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="Startgame" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_qwnig")
+text = "Start game"
+
+[node name="Settings" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Settings"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Exit"
+
+[connection signal="pressed" from="VBoxContainer/Startgame" to="." method="_on_startgame_pressed"]
+[connection signal="pressed" from="VBoxContainer/Startgame" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
