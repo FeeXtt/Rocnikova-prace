@@ -15,9 +15,14 @@ run/main_scene="uid://c34utnkk55xuu"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
+ConfigFileManager="*res://scripts/ConfigFileManager.gd"
 
 [dotnet]
 
@@ -70,7 +75,7 @@ Escape={
 
 [physics]
 
-2d/default_gravity=4096.0
+2d/default_gravity=2045.38
 
 [rendering]
 

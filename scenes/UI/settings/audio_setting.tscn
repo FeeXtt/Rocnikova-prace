@@ -1,0 +1,82 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqteql2qi6h8y"]
+
+[ext_resource type="Script" uid="uid://bvw1eu23ajn2b" path="res://scripts/UI/settings/audio_setting.gd" id="1_g748y"]
+
+[node name="AudioSetting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g748y")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.5
+offset_top = -190.5
+offset_right = 168.5
+offset_bottom = 190.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Master volume label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Master volume"
+
+[node name="MasterVolume" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Music volume label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Music volume"
+
+[node name="MusicVolume" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SFX volume label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "SFX volume"
+
+[node name="SFXVolume" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Save" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Save"
+
+[node name="Back" type="Button" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[connection signal="changed" from="Panel/VBoxContainer/MasterVolume" to="." method="_on_master_volume_changed"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer/MasterVolume" to="." method="_on_master_volume_mouse_exited"]
+[connection signal="changed" from="Panel/VBoxContainer/MusicVolume" to="." method="_on_music_volume_changed"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer/MusicVolume" to="." method="_on_music_volume_mouse_exited"]
+[connection signal="changed" from="Panel/VBoxContainer/SFXVolume" to="." method="_on_sfx_volume_changed"]
+[connection signal="mouse_exited" from="Panel/VBoxContainer/SFXVolume" to="." method="_on_sfx_volume_mouse_exited"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/HBoxContainer/Back" to="." method="_on_back_pressed"]
