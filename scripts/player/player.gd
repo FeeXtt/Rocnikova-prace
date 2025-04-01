@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 	else:
 		can_double_jump = true
-	var direction = Input.get_axis("ui_left", "ui_right")
+	var direction = Input.get_axis("MoveLeft", "MoveRight")
 	if direction != 0 and not is_holding_jump:
 		velocity.x = direction * SPEED
 		last_direction = sign(direction)
@@ -49,8 +49,7 @@ func _physics_process(delta: float) -> void:
 		if not animation_player.is_playing() or animation_player.current_animation != "idle" && animation_player.current_animation != "fire":
 			animation_player.play("idle")
 	
-	# Handle jump input
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			is_jumping = true
 			jump_timer = 0.0
@@ -58,8 +57,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = DOUBLE_JUMP_FORCE
 			can_double_jump = false
 			
-	
-	if Input.is_action_pressed("ui_accept") and is_jumping:
+	if Input.is_action_pressed("jump") and is_jumping:
 		if jump_timer > 0.1:
 			velocity.x = 0
 		
@@ -71,7 +69,8 @@ func _physics_process(delta: float) -> void:
 		if jump_timer < MAX_JUMP_HOLD_TIME:
 			jump_timer += delta
 	
-	if Input.is_action_just_released("ui_accept") and is_jumping:
+
+	if Input.is_action_just_released("jump") and is_jumping:
 		is_holding_jump = false
 		if not animation_player.is_playing() or animation_player.current_animation != "afterjump":
 			animation_player.play("afterjump")

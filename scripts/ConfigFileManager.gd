@@ -33,7 +33,7 @@ func save_settings() -> void:
 	config.set_value("audio", "sfx_volume", sfx_volume)
 	config.save(settings_file_path)
 	print(settings_file_path)
-	
+
 	AudioServer.set_bus_volume_db(0, linear_to_db(master_volume))
 	AudioServer.set_bus_volume_db(1, linear_to_db(music_volume))
 	AudioServer.set_bus_volume_db(2, linear_to_db(sfx_volume))
@@ -42,6 +42,8 @@ func save_settings() -> void:
 	print(sfx_volume)
 	print("save")
 
+
+
 func load_settings() -> void:
 	if FileAccess.file_exists(settings_file_path):
 		config.load(settings_file_path)
@@ -49,10 +51,28 @@ func load_settings() -> void:
 		music_volume = config.get_value("audio", "music_volume", music_volume)
 		sfx_volume = config.get_value("audio", "sfx_volume",  sfx_volume)
 		print("load")
+
+		
+		config.set_value("keybiding", "MoveLeft", "A")
+		config.set_value("keybiding", "MoveRight", "D")
+		config.set_value("keybiding", "MoveUp", "W")
+		config.set_value("keybiding", "MoveDown", "S")
+		config.set_value("keybiding", "jump", "Space")
+		config.set_value("keybiding", "fire", "mouse_1")
+
 	else:
 		master_volume = config.get_value("audio", "master_volume", 100)
 		music_volume = config.get_value("audio", "music_volume", 100)
 		sfx_volume = config.get_value("audio", "sfx_volume",  100)
+
+		
+		config.set_value("keybiding", "MoveLeft", "A")
+		config.set_value("keybiding", "MoveRight", "D")
+		config.set_value("keybiding", "MoveUp", "W")
+		config.set_value("keybiding", "MoveDown", "S")
+		config.set_value("keybiding", "jump", "Space")
+		config.set_value("keybiding", "fire", "mouse_1")
+
 	
 	print(master_volume)
 	print(music_volume)

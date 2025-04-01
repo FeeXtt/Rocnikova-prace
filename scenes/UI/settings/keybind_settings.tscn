@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://4svi7tparo3d"]
+
+[ext_resource type="Script" uid="uid://ekw3a1u0vlmc" path="res://scripts/UI/settings/input_settings.gd" id="1_7p4yu"]
+[ext_resource type="PackedScene" uid="uid://bkrt7bipqrfx0" path="res://scenes/UI/input_button.tscn" id="2_sbl4r"]
+
+[node name="Keybind_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7p4yu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="List" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -385.0
+offset_top = -254.0
+offset_right = 385.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputButton1" parent="Panel/List" instance=ExtResource("2_sbl4r")]
+layout_mode = 2
+
+[node name="InputButton2" parent="Panel/List" instance=ExtResource("2_sbl4r")]
+layout_mode = 2
+
+[node name="InputButton3" parent="Panel/List" instance=ExtResource("2_sbl4r")]
+layout_mode = 2
+
+[node name="InputButton4" parent="Panel/List" instance=ExtResource("2_sbl4r")]
+layout_mode = 2
+
+[node name="InputButton5" parent="Panel/List" instance=ExtResource("2_sbl4r")]
+layout_mode = 2
+
+[node name="InputButton6" parent="Panel/List" instance=ExtResource("2_sbl4r")]
+layout_mode = 2
