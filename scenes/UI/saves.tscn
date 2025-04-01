@@ -1,0 +1,96 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwht06h1bht0l"]
+
+[ext_resource type="Script" uid="uid://kpwd1tq0nlav" path="res://scripts/UI/saveMenu.gd" id="1_1orhh"]
+
+[node name="Saves" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1orhh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -451.0
+offset_top = -263.5
+offset_right = 451.0
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SAVE1" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="save1_text_level" type="RichTextLabel" parent="Panel/HBoxContainer/SAVE1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.5
+offset_right = 51.5
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SAVE2" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="save2_text_level" type="RichTextLabel" parent="Panel/HBoxContainer/SAVE2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -63.5
+offset_right = 63.5
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SAVE3" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3"
+
+[node name="save3_text_level" type="RichTextLabel" parent="Panel/HBoxContainer/SAVE3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -58.0
+offset_right = 58.0
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/HBoxContainer/SAVE1" to="." method="_on_save_1_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/SAVE2" to="." method="_on_save_2_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/SAVE3" to="." method="_on_save_3_pressed"]
