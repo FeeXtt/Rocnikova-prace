@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c34utnkk55xuu"]
 
-[ext_resource type="Script" uid="uid://ci2i3j0suy6sh" path="res://scripts/main_menu.gd" id="1_qwnig"]
+[ext_resource type="Script" uid="uid://ci2i3j0suy6sh" path="res://scripts/UI/main_menu.gd" id="1_qwnig"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwnig"]
 bg_color = Color(0.502453, 0.617014, 0.70662, 1)
@@ -61,7 +61,7 @@ layout_mode = 2
 size_flags_vertical = 6
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/Startgame" to="." method="_on_startgame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Startgame" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Startgame" to="." method="_on_startgame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

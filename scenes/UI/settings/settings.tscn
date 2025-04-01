@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgiwwumr6tbay"]
+
+[ext_resource type="Script" uid="uid://btbuuj768ffku" path="res://scripts/UI/settings/settings.gd" id="1_ktigh"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ktigh")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -154.0
+offset_top = -192.0
+offset_right = 155.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Audio"
+
+[node name="KeyboardSettingButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Mouse & Keyboard binds
+"
+
+[node name="ControllerSettingsButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Controler binds"
+
+[connection signal="pressed" from="Panel/VBoxContainer/AudioButton" to="." method="_on_audio_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/KeyboardSettingButton" to="." method="_on_keyboard_setting_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ControllerSettingsButton" to="." method="_on_controller_settings_button_pressed"]

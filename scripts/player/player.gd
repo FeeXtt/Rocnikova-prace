@@ -49,7 +49,6 @@ func _physics_process(delta: float) -> void:
 		if not animation_player.is_playing() or animation_player.current_animation != "idle" && animation_player.current_animation != "fire":
 			animation_player.play("idle")
 	
-	# Handle jump input
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			is_jumping = true
@@ -58,7 +57,6 @@ func _physics_process(delta: float) -> void:
 			velocity.y = DOUBLE_JUMP_FORCE
 			can_double_jump = false
 			
-	
 	if Input.is_action_pressed("jump") and is_jumping:
 		if jump_timer > 0.1:
 			velocity.x = 0
@@ -71,6 +69,7 @@ func _physics_process(delta: float) -> void:
 		if jump_timer < MAX_JUMP_HOLD_TIME:
 			jump_timer += delta
 	
+
 	if Input.is_action_just_released("jump") and is_jumping:
 		is_holding_jump = false
 		if not animation_player.is_playing() or animation_player.current_animation != "afterjump":
