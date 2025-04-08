@@ -8,6 +8,10 @@ var activatedCheckpoint: bool;
 var player;
 var level: int;
 var doorLevel: int;
+<<<<<<< Updated upstream
+=======
+var saveButtKeybinVisible: bool
+>>>>>>> Stashed changes
 
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -25,13 +29,23 @@ func load_data():
 		GameManager.doorLevel = file.get_var(GameManager.doorLevel)
 		GameManager.activatedCheckpoint = file.get_var(GameManager.activatedCheckpoint)
 		
+<<<<<<< Updated upstream
+=======
+		
+>>>>>>> Stashed changes
 	loadlevel ="res://scenes/levels/level_"+str(GameManager.level)+".tscn"
 	
 
 func respawn_player():
 	doorLevel = level
+<<<<<<< Updated upstream
 	get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
 	get_tree().get_first_node_in_group("Player")
+=======
+	#get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
+	#get_tree().get_first_node_in_group("Player")
+	
+>>>>>>> Stashed changes
 
 func reload_player():
 	if currentCheckpoint != null:

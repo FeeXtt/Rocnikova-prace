@@ -6,9 +6,10 @@ const BULLET = preload("res://scenes/player/bullet.tscn")
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const MAX_JUMP_HOLD_TIME = 0.5
-const BASE_JUMP_FORCE = -300.0
-const MAX_JUMP_FORCE = -500.0
-const DOUBLE_JUMP_FORCE = -300.0
+const BASE_JUMP_FORCE = -400.0
+const MAX_JUMP_FORCE = -600.0
+const DOUBLE_JUMP_FORCE = -400.0
+
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_jumping = false
@@ -18,6 +19,11 @@ var can_double_jump = false
 var jump_timer = 0.0
 var playerposition
 var last_direction = 1
+
+
+
+@onready var shootingSound = $ShootingSound
+@onready var jumpingSound = $JumpingSound
 
 var animation_player: AnimationPlayer
 var sprite: Sprite2D
@@ -44,7 +50,6 @@ func _physics_process(delta: float) -> void:
 	elif not is_holding_jump:
 		if Input.is_action_just_pressed("fire"):
 			animation_player.play("fire")
-			
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if not animation_player.is_playing() or animation_player.current_animation != "idle" && animation_player.current_animation != "fire":
 			animation_player.play("idle")
@@ -55,6 +60,7 @@ func _physics_process(delta: float) -> void:
 			is_jumping = true
 			jump_timer = 0.0
 		elif can_double_jump:
+			jumpingSound.play()
 			velocity.y = DOUBLE_JUMP_FORCE
 			can_double_jump = false
 			
@@ -73,6 +79,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("ui_accept") and is_jumping:
 		is_holding_jump = false
+		jumpingSound.play()
 		if not animation_player.is_playing() or animation_player.current_animation != "afterjump":
 			animation_player.play("afterjump")
 		
@@ -85,12 +92,14 @@ func _physics_process(delta: float) -> void:
 #SHOOTING
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("fire"):
-		is_shooting = true
 		var bullet_instance = BULLET.instantiate()
 		get_tree().root.add_child(bullet_instance)
-		bullet_instance.global_position = position
+		var offset_distance := 12
+		var offset := Vector2(offset_distance * last_direction, 0) 
+		bullet_instance.global_position = position + offset
 		bullet_instance.set_direction(last_direction)
-		is_shooting = false
+		shootingSound.play()
+
 
 func die():
 	print("die")

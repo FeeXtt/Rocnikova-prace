@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://bvw1eu23ajn2b" path="res://scripts/UI/settings/audio_setting.gd" id="1_g748y"]
 
 [node name="AudioSetting" type="Control"]
+<<<<<<< Updated upstream
+=======
+process_mode = 3
+>>>>>>> Stashed changes
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
