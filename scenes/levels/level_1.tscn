@@ -1,19 +1,11 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=8 format=3 uid="uid://byuhk7lh0pd5s"]
-
-[ext_resource type="PackedScene" uid="uid://csup0t2ah0yo2" path="res://scenes/components/checkpoint.tscn" id="1_5xbjy"]
-=======
 [gd_scene load_steps=11 format=3 uid="uid://byuhk7lh0pd5s"]
 
 [ext_resource type="PackedScene" uid="uid://csup0t2ah0yo2" path="res://scenes/components/checkpoint.tscn" id="1_5xbjy"]
 [ext_resource type="Texture2D" uid="uid://6fhkhny2id2b" path="res://assets/tilemapSprites/GrassDirt.png" id="1_sk5k4"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://b8cugoqhdk7hd" path="res://scenes/player/player.tscn" id="2_4nkto"]
 [ext_resource type="PackedScene" uid="uid://mft4i38tu0qe" path="res://scenes/traps/shooting_spikes.tscn" id="3_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://c7bs7nhylfkxa" path="res://scenes/components/door.tscn" id="4_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://dfd7l808w0xe5" path="res://scenes/UI/pause_menu.tscn" id="4_x42e6"]
-<<<<<<< Updated upstream
-=======
 [ext_resource type="PackedScene" uid="uid://d2mc5qt7xaw2i" path="res://scenes/traps/spike.tscn" id="5_oc4kc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sk5k4"]
@@ -68,25 +60,10 @@ texture = ExtResource("1_sk5k4")
 
 [sub_resource type="TileSet" id="TileSet_s8va5"]
 sources/0 = SubResource("TileSetAtlasSource_sk5k4")
->>>>>>> Stashed changes
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ne2mo"]
 distance = -78.8963
 
-<<<<<<< Updated upstream
-[sub_resource type="CanvasTexture" id="CanvasTexture_6cvei"]
-
-[node name="Level2" type="Node2D"]
-
-[node name="Checkpoint" parent="." instance=ExtResource("1_5xbjy")]
-position = Vector2(165, 11)
-
-[node name="Player" parent="." instance=ExtResource("2_4nkto")]
-position = Vector2(-282, 14)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-=======
 [node name="Level2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -102,25 +79,10 @@ position = Vector2(-219, 48)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 limit_smoothed = true
->>>>>>> Stashed changes
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-<<<<<<< Updated upstream
-position = Vector2(-85, -49)
-shape = SubResource("WorldBoundaryShape2D_ne2mo")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-1.00002, 34)
-scale = Vector2(574, 9)
-texture = SubResource("CanvasTexture_6cvei")
-
-[node name="ShootingSpikes" parent="." instance=ExtResource("3_fcfvj")]
-position = Vector2(9, -135)
-rotation = 3.14159
-speed = 50
-=======
 position = Vector2(-86, -14)
 shape = SubResource("WorldBoundaryShape2D_ne2mo")
 
@@ -133,17 +95,10 @@ position = Vector2(-16, 64)
 [node name="ShootingSpikes2" parent="." instance=ExtResource("3_fcfvj")]
 position = Vector2(16, 64)
 speed = -200
->>>>>>> Stashed changes
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("4_x42e6")]
-<<<<<<< Updated upstream
-metadata/_edit_use_anchors_ = true
-
-[node name="Door" parent="." instance=ExtResource("4_pa8r4")]
-position = Vector2(228, -61)
-=======
 offset_left = 1.0
 offset_right = 1.0
 metadata/_edit_use_anchors_ = true
@@ -153,4 +108,3 @@ position = Vector2(285, 15)
 
 [node name="Player" parent="." instance=ExtResource("2_4nkto")]
 position = Vector2(-278, 48)
->>>>>>> Stashed changes

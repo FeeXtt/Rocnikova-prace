@@ -17,24 +17,17 @@ config/icon="res://icon.svg"
 
 [audio]
 
-<<<<<<< Updated upstream
-buses/default_bus_layout=""
-=======
 buses/default_bus_layout="uid://f06n3qdt7fih"
->>>>>>> Stashed changes
 
 [autoload]
 
 GameManager="*res://scripts/game_manager.gd"
 ConfigFileManager="*res://scripts/ConfigFileManager.gd"
-<<<<<<< Updated upstream
-=======
 
 [display]
 
 window/size/window_width_override=1024
 window/stretch/mode="canvas_items"
->>>>>>> Stashed changes
 
 [dotnet]
 

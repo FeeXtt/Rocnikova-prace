@@ -16,9 +16,6 @@ texture = ExtResource("2_0td6m")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BulletHitBox"]
 scale = Vector2(1.02083, 1)
 polygon = PackedVector2Array(-3, -1, 2, -1, 3, 0, 2, 1, -3, 1)
-<<<<<<< Updated upstream
-=======
 
 [connection signal="area_entered" from="BulletHitBox" to="." method="_on_bullet_hit_box_area_entered"]
 [connection signal="child_entered_tree" from="BulletHitBox/CollisionPolygon2D" to="." method="_on_collision_polygon_2d_child_entered_tree"]
->>>>>>> Stashed changes

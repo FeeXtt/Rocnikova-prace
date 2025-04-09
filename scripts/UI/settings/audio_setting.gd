@@ -6,15 +6,9 @@ extends Control
 @onready var save_button = $Panel/VBoxContainer/HBoxContainer/Save
 
 func _ready() -> void:
-<<<<<<< Updated upstream
-	master_volume_slider.value = ConfigFileManager.master_volume
-	music_volume_slider.value = ConfigFileManager.music_volume
-	sfx_volume_slider.value = ConfigFileManager.sfx_volume
-=======
 	master_volume_slider.value = ConfigFileManager.master_volume*100
 	music_volume_slider.value = ConfigFileManager.music_volume*100
 	sfx_volume_slider.value = ConfigFileManager.sfx_volume*100
->>>>>>> Stashed changes
 	
 	master_volume_slider.value_changed.connect(_on_master_volume_value_changed)
 	music_volume_slider.value_changed.connect(_on_music_volume_value_changed)
@@ -23,35 +17,20 @@ func _ready() -> void:
 	save_button.visible = false
 
 func _on_master_volume_value_changed(value: float) -> void:
-<<<<<<< Updated upstream
-	ConfigFileManager.master_volume = value
-	AudioServer.set_bus_volume_db(0, linear_to_db(value))
-=======
 	ConfigFileManager.master_volume = value/100
 	AudioServer.set_bus_volume_db(0, linear_to_db(value/100))
->>>>>>> Stashed changes
 	print(str(value))
 	save_button.visible = true
 
 func _on_music_volume_value_changed(value: float) -> void:
-<<<<<<< Updated upstream
-	ConfigFileManager.music_volume = value
-	AudioServer.set_bus_volume_db(1, linear_to_db(value))
-=======
 	ConfigFileManager.music_volume = value/100
 	AudioServer.set_bus_volume_db(1, linear_to_db(value/100))
->>>>>>> Stashed changes
 	print(str(value))
 	save_button.visible = true
 
 func _on_sfx_volume_value_changed(value: float) -> void:
-<<<<<<< Updated upstream
-	ConfigFileManager.sfx_volume = value
-	AudioServer.set_bus_volume_db(2, linear_to_db(value))
-=======
 	ConfigFileManager.sfx_volume = value/100
 	AudioServer.set_bus_volume_db(2, linear_to_db(value/100))
->>>>>>> Stashed changes
 	print(str(value))
 	save_button.visible = true
 
