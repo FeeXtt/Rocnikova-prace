@@ -1,7 +1,16 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=3 uid="uid://b8cugoqhdk7hd"]
 
 [ext_resource type="Script" uid="uid://dyw6nelp070ak" path="res://scripts/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bqgeaxm46lf5h" path="res://assets/playerAnims.png" id="2_g2els"]
+=======
+[gd_scene load_steps=15 format=3 uid="uid://b8cugoqhdk7hd"]
+
+[ext_resource type="Script" uid="uid://dyw6nelp070ak" path="res://scripts/player/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bqgeaxm46lf5h" path="res://assets/playerAnims.png" id="2_g2els"]
+[ext_resource type="AudioStream" uid="uid://cvioktivcvnss" path="res://assets/audio/sfx/gunshot-fx-metallic.wav" id="3_gmlin"]
+[ext_resource type="AudioStream" uid="uid://1mpy8ollg7a7" path="res://assets/audio/sfx/jumpsound.mp3" id="4_lvxji"]
+>>>>>>> Stashed changes
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhqgy"]
 size = Vector2(9, 30)
@@ -137,9 +146,19 @@ position = Vector2(5, -46)
 script = ExtResource("1_g2els")
 
 [node name="Area2D" type="Area2D" parent="."]
+<<<<<<< Updated upstream
 monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+=======
+collision_layer = 3
+collision_mask = 3
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 3
+visibility_layer = 3
+>>>>>>> Stashed changes
 position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_qhqgy")
 
@@ -156,3 +175,16 @@ shape = SubResource("RectangleShape2D_g2els")
 libraries = {
 &"": SubResource("AnimationLibrary_dqkch")
 }
+<<<<<<< Updated upstream
+=======
+
+[node name="ShootingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_gmlin")
+volume_db = -10.278
+bus = &"SFX"
+
+[node name="JumpingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_lvxji")
+volume_db = -10.947
+bus = &"SFX"
+>>>>>>> Stashed changes

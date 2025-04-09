@@ -40,6 +40,10 @@ func _on_save_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	if paused:
+<<<<<<< Updated upstream
+=======
+		get_tree().paused = false
+>>>>>>> Stashed changes
 		get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
 
 

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://3kej5lsacr8r"]
+
+[ext_resource type="Script" uid="uid://l4oifefa08v2" path="res://scripts/UI/settings/InputButton.gd" id="1_hkwrg"]
+
+[node name="InputButton" type="Button"]
+size_flags_horizontal = 3
+script = ExtResource("1_hkwrg")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
