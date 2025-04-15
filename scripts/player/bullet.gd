@@ -13,5 +13,5 @@ func set_direction(new_direction: int):
 	direction = new_direction
 	sprite.flip_h = direction < 0
 
-func _on_bullet_hit_box_area_entered(area: Area2D) -> void:
+func _on_bullet_hit_box_area_entered(_area: Area2D) -> void:
 	queue_free()

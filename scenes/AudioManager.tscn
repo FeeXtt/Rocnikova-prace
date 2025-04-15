@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctl0xct608e1i"]
+
+[ext_resource type="Script" uid="uid://4lhckwxo70a1" path="res://scripts/audio_manager.gd" id="1_v6v0x"]
+[ext_resource type="AudioStream" uid="uid://cvioktivcvnss" path="res://assets/audio/sfx/gunshot-fx-metallic.wav" id="2_4tesi"]
+[ext_resource type="AudioStream" uid="uid://1mpy8ollg7a7" path="res://assets/audio/sfx/jumpsound.mp3" id="3_3dgps"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_v6v0x")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+bus = &"Music"
+
+[node name="ShootingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4tesi")
+volume_db = -10.278
+bus = &"SFX"
+
+[node name="JumpingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3dgps")
+volume_db = -10.947
+bus = &"SFX"

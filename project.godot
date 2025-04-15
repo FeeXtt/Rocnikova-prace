@@ -12,7 +12,7 @@ config_version=5
 
 config/name="MyRocnikovkaGame"
 run/main_scene="uid://c34utnkk55xuu"
-config/features=PackedStringArray("4.4", "C#", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [audio]
@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://f06n3qdt7fih"
 
 GameManager="*res://scripts/game_manager.gd"
 ConfigFileManager="*res://scripts/ConfigFileManager.gd"
+AudioManagerScene="*res://scenes/AudioManager.tscn"
 
 [display]
 

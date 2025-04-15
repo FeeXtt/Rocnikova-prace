@@ -4,11 +4,11 @@ class_name Player
 
 const BULLET = preload("res://scenes/player/bullet.tscn")
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -350.0
 const MAX_JUMP_HOLD_TIME = 0.5
-const BASE_JUMP_FORCE = -400.0
-const MAX_JUMP_FORCE = -600.0
-const DOUBLE_JUMP_FORCE = -400.0
+const BASE_JUMP_FORCE = -350.0
+const MAX_JUMP_FORCE = -500.0
+const DOUBLE_JUMP_FORCE = -350.0
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -21,19 +21,15 @@ var playerposition
 var last_direction = 1
 
 
-
-@onready var shootingSound = $ShootingSound
-@onready var jumpingSound = $JumpingSound
-
 var animation_player: AnimationPlayer
 var sprite: Sprite2D
 
 func _ready():
 	animation_player = $AnimationPlayer
 	sprite = $Sprite2D
-	GameManager.player = self
 	GameManager.reload_player()
-
+	
+	
 #MOVEMENT
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -60,7 +56,7 @@ func _physics_process(delta: float) -> void:
 			is_jumping = true
 			jump_timer = 0.0
 		elif can_double_jump:
-			jumpingSound.play()
+			AudioManagerScene.jump_play()
 			velocity.y = DOUBLE_JUMP_FORCE
 			can_double_jump = false
 			
@@ -79,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_released("jump") and is_jumping:
 		is_holding_jump = false
-		jumpingSound.play()
+		AudioManagerScene.jump_play()
 		if not animation_player.is_playing() or animation_player.current_animation != "afterjump":
 			animation_player.play("afterjump")
 		
@@ -90,7 +86,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 #SHOOTING
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("fire"):
 		var bullet_instance = BULLET.instantiate()
 		get_tree().root.add_child(bullet_instance)
@@ -98,7 +94,7 @@ func _process(delta: float) -> void:
 		var offset := Vector2(offset_distance * last_direction, 0) 
 		bullet_instance.global_position = position + offset
 		bullet_instance.set_direction(last_direction)
-		shootingSound.play()
+		AudioManagerScene.shoot_play()
 
 
 func die():

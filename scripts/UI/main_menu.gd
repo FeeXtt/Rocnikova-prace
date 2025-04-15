@@ -1,9 +1,11 @@
 extends Control
 
+@export var music_stream = preload("res://assets/audio/Music/DatabaseSoundTrack.mp3")
+
 func _ready() -> void:
-	pass
+	AudioManagerScene.play_music(music_stream)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_startgame_pressed() -> void:

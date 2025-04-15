@@ -1,17 +1,19 @@
 extends Node2D
 
 @export var speed: = -300
+@export var sideways = true
 var current_speed: = 0.0 
 
 func _physics_process(delta):
-	position.y += current_speed * delta
+	if sideways:
+		position.x += current_speed * delta
+	else:
+		position.y += current_speed * delta
 
 func _on_hitbox_area_entered(area):
 	if area.get_parent() is Player:
 		area.get_parent().die()
-	else:
-		queue_free()
-		
+
 func _on_body_entered(area):
 	if area.get_parent() is Area2D: 
 		queue_free()

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de32psv6s2854" path="res://assets/bullet.png" id="2_0td6m"]
 
 [node name="Bullet" type="Node2D"]
+scale = Vector2(0.640001, 0.640001)
 script = ExtResource("1_j5eos")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

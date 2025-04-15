@@ -9,6 +9,8 @@ var player;
 var level: int;
 var doorLevel: int;
 var saveButtKeybinVisible: bool
+@onready var audio_player = get_node("AudioPlayer")
+
 
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
@@ -16,6 +18,7 @@ func save():
 	file.store_var(GameManager.level)
 	file.store_var(GameManager.doorLevel)
 	file.store_var(GameManager.activatedCheckpoint)
+	
 
 func load_data():
 	save_path ="res://position"+str(numberOfSave)+ ".save"
@@ -32,14 +35,13 @@ func load_data():
 
 func respawn_player():
 	doorLevel = level
-	#get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
-	#get_tree().get_first_node_in_group("Player")
-	
+	get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
+	get_tree().get_first_node_in_group("Checkpoint")
 
 func reload_player():
 	if currentCheckpoint != null:
 		player.position = currentCheckpoint.global_position
-		print("Respawn na checkpoint:", currentCheckpoint.global_position)
+		print("Respawn na checkpoint:", currentCheckpoint.global_position, player.position)
 	
 	
 	

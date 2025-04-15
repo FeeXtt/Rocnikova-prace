@@ -14,7 +14,7 @@ func _ready() -> void:
 	save2_level = $Panel/HBoxContainer/SAVE2/save2_text_level
 	save3_level = $Panel/HBoxContainer/SAVE3/save3_text_level
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if saves_level[0] != null:
 		save1_level.text ="level:" + str(saves_level[0]) 
 	if saves_level[1] != null:
