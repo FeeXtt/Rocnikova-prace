@@ -27,7 +27,10 @@ var sprite: Sprite2D
 func _ready():
 	animation_player = $AnimationPlayer
 	sprite = $Sprite2D
-	GameManager.reload_player()
+	if GameManager.currentCheckpoint != null && GameManager.doorLevel == GameManager.level:
+		position = GameManager.currentCheckpoint
+		
+	
 	
 	
 #MOVEMENT

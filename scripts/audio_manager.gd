@@ -25,3 +25,7 @@ func shoot_play():
 	
 func jump_play():
 	jump.play()
+	
+func play_music_boss_level(stream: AudioStream):
+		music.stream = stream
+		music.play()

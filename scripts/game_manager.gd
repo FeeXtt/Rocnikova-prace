@@ -11,7 +11,6 @@ var doorLevel: int;
 var saveButtKeybinVisible: bool
 @onready var audio_player = get_node("AudioPlayer")
 
-
 func save():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 	print(save_path)
@@ -34,14 +33,13 @@ func load_data():
 	
 
 func respawn_player():
-	doorLevel = level
-	get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
-	get_tree().get_first_node_in_group("Checkpoint")
-
-func reload_player():
-	if currentCheckpoint != null:
-		player.position = currentCheckpoint.global_position
-		print("Respawn na checkpoint:", currentCheckpoint.global_position, player.position)
+	#doorLevel = level
+	#get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
+	pass
+func _input(event) -> void:
+	if event.is_action_pressed("Reset"):
+		doorLevel = level
+		get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
 	
 	
 	

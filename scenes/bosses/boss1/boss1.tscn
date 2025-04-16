@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnbqlffa2o1vj"]
+
+[ext_resource type="Script" uid="uid://lhrg60lqqk32" path="res://scripts/bosses/boss1/boss_1.gd" id="1_13iuh"]
+[ext_resource type="Texture2D" uid="uid://1ujkv4xhkgew" path="res://assets/Boss1/ChristianHlava.png" id="1_r77br"]
+
+[node name="Boss" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_13iuh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.99997, -1.00003)
+scale = Vector2(0.176301, 0.176301)
+texture = ExtResource("1_r77br")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(45, -57, 18, -75, -15, -75, -40, -65, -56, -30, -49, -6, -46, 13, -42, 18, -39, 42, -27, 54, -20, 61, -14, 70, 5, 73, 22, 60, 39, 43, 43, 32, 46, 21, 53, 15, 59, -26)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

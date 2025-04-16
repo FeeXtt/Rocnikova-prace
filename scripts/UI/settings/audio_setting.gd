@@ -44,5 +44,7 @@ func _input(event) -> void:
 		ConfigFileManager.load_settings()
 
 func _on_back_pressed() -> void:
+	AudioManagerScene.resume_music()
 	get_tree().change_scene_to_file("res://scenes/UI/settings/settings.tscn")
 	ConfigFileManager.load_settings()
+	

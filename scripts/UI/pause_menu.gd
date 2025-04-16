@@ -34,6 +34,7 @@ func _on_resume_pressed() -> void:
 	if paused:
 		resume()
 		print("resume")
+		AudioManagerScene.resume_music()
 
 
 func _on_save_pressed() -> void:

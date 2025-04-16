@@ -155,12 +155,24 @@ sources/0 = SubResource("TileSetAtlasSource_6ayib")
 sources/1 = SubResource("TileSetAtlasSource_65guy")
 sources/2 = SubResource("TileSetAtlasSource_p6rmu")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_15mv3"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ayib"]
 normal = Vector2(-3.46791e-08, -1)
 distance = -74.0
 
 [node name="level0" type="Node2D"]
 script = ExtResource("1_6ayib")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -364.0
+offset_top = -132.0
+offset_right = -140.0
+offset_bottom = -5.0
+text = "jump
+double jump
+charge jump, kdyz podrzis
+levym tlacitkem u mysi strilis
+"
+metadata/_edit_use_anchors_ = true
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 3
@@ -178,7 +190,7 @@ tile_set = SubResource("TileSet_3mnpy")
 [node name="clouds" type="TileMapLayer" parent="TileMap"]
 z_index = -1
 use_parent_material = true
-tile_map_data = PackedByteArray("AADu/wAAAgACAAAAAADv/wAAAgADAAAAAADw/wAAAgAEAAAAAAD0//r/AgACAAAAAAD1//r/AgADAAAAAAD2//r/AgAEAAAAAAAOAAAAAgACAAAAAAAPAAAAAgADAAAAAAAQAAAAAgAEAAAAAAAFAPn/AgACAAAAAAAGAPn/AgADAAAAAAAHAPn/AgAEAAAAAAADAP//AgAAAAEAAAAEAP//AgABAAEAAAAFAP//AgACAAEAAAD5//3/AgAAAAEAAAD6//3/AgABAAEAAAD7//3/AgACAAEAAADt//z/AgAAAAEAAADu//z/AgABAAEAAADv//z/AgACAAEAAADs//f/AgAAAAEAAADt//f/AgABAAEAAADu//f/AgACAAEAAAAPAPn/AgABAAIAAAAQAPn/AgACAAIAAAARAPn/AgADAAIAAAASAPn/AgAEAAIAAAD5//f/AgABAAIAAAD6//f/AgACAAIAAAD7//f/AgADAAIAAAD8//f/AgAEAAIAAAAKAPz/AgABAAIAAAALAPz/AgACAAIAAAAMAPz/AgADAAIAAAANAPz/AgAEAAIAAAAKAPX/AgABAAIAAAALAPX/AgACAAIAAAAMAPX/AgADAAIAAAANAPX/AgAEAAIAAADz//P/AgAAAAMAAAD0//P/AgABAAMAAAD1//P/AgACAAMAAADq//P/AgAAAAMAAADr//P/AgABAAMAAADs//P/AgACAAMAAAD9//P/AgAAAAMAAAD+//P/AgABAAMAAAD///P/AgACAAMAAAABAPv/AgAAAAMAAAACAPv/AgABAAMAAAADAPv/AgACAAMAAAASAP3/AgABAAIAAAATAP3/AgACAAIAAAAUAP3/AgADAAIAAAAVAP3/AgAEAAIAAAATAPT/AgABAAIAAAAUAPT/AgACAAIAAAAVAPT/AgADAAIAAAAWAPT/AgAEAAIAAAA=")
+tile_map_data = PackedByteArray("AADu/wAAAgACAAAAAADv/wAAAgADAAAAAADw/wAAAgAEAAAAAAD0//r/AgACAAAAAAD1//r/AgADAAAAAAD2//r/AgAEAAAAAAAOAAAAAgACAAAAAAAPAAAAAgADAAAAAAAQAAAAAgAEAAAAAAAFAPn/AgACAAAAAAAGAPn/AgADAAAAAAAHAPn/AgAEAAAAAAADAP//AgAAAAEAAAAEAP//AgABAAEAAAAFAP//AgACAAEAAAD5//3/AgAAAAEAAAD6//3/AgABAAEAAAD7//3/AgACAAEAAADs//f/AgAAAAEAAADt//f/AgABAAEAAADu//f/AgACAAEAAAAPAPn/AgABAAIAAAAQAPn/AgACAAIAAAARAPn/AgADAAIAAAASAPn/AgAEAAIAAAD5//f/AgABAAIAAAD6//f/AgACAAIAAAD7//f/AgADAAIAAAD8//f/AgAEAAIAAAAKAPz/AgABAAIAAAALAPz/AgACAAIAAAAMAPz/AgADAAIAAAANAPz/AgAEAAIAAAAKAPX/AgABAAIAAAALAPX/AgACAAIAAAAMAPX/AgADAAIAAAANAPX/AgAEAAIAAADz//P/AgAAAAMAAAD0//P/AgABAAMAAAD1//P/AgACAAMAAADq//P/AgAAAAMAAADr//P/AgABAAMAAADs//P/AgACAAMAAAD9//P/AgAAAAMAAAD+//P/AgABAAMAAAD///P/AgACAAMAAAABAPv/AgAAAAMAAAACAPv/AgABAAMAAAADAPv/AgACAAMAAAASAP3/AgABAAIAAAATAP3/AgACAAIAAAAUAP3/AgADAAIAAAAVAP3/AgAEAAIAAAATAPT/AgABAAIAAAAUAPT/AgACAAIAAAAVAPT/AgADAAIAAAAWAPT/AgAEAAIAAAA=")
 tile_set = SubResource("TileSet_3mnpy")
 
 [node name="Ground" type="TileMapLayer" parent="TileMap"]
@@ -198,15 +210,29 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="Bounds" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
+[node name="PlayerBoundLeft" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(-314, 27)
 rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_15mv3")
+shape = SubResource("WorldBoundaryShape2D_6ayib")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
+[node name="PlayerBoundRight" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(310, 6)
 rotation = -1.5708
-shape = SubResource("WorldBoundaryShape2D_15mv3")
+shape = SubResource("WorldBoundaryShape2D_6ayib")
+
+[node name="LeftBound" type="Area2D" parent="Bounds"]
+
+[node name="ObjectBoundLeft" type="CollisionShape2D" parent="Bounds/LeftBound"]
+position = Vector2(-314, 27)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_6ayib")
+
+[node name="RightBound" type="Area2D" parent="Bounds"]
+
+[node name="ObjectBoundRight" type="CollisionShape2D" parent="Bounds/RightBound"]
+position = Vector2(310, 6)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_6ayib")
 
 [node name="Door" parent="." groups=["ResetScene"] instance=ExtResource("4_3mnpy")]
 position = Vector2(372, 4)

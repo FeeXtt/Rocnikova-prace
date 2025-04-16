@@ -157,12 +157,15 @@ sources/0 = SubResource("TileSetAtlasSource_qxy0u")
 sources/1 = SubResource("TileSetAtlasSource_excbq")
 sources/2 = SubResource("TileSetAtlasSource_iav0o")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_15mv3"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qxy0u"]
 normal = Vector2(-3.46791e-08, -1)
 distance = -74.0
 
 [node name="level1" type="Node2D"]
 script = ExtResource("1_s8va5")
+
+[node name="Checkpoint" parent="." instance=ExtResource("1_5xbjy")]
+position = Vector2(-97, 42)
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 3
@@ -201,15 +204,29 @@ zoom = Vector2(1.5, 1.5)
 
 [node name="Bounds" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds"]
+[node name="PlayerBoundLeft" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(-314, 27)
 rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_15mv3")
+shape = SubResource("WorldBoundaryShape2D_qxy0u")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Bounds"]
+[node name="PlayerBoundRight" type="CollisionShape2D" parent="Bounds"]
 position = Vector2(310, 6)
 rotation = -1.5708
-shape = SubResource("WorldBoundaryShape2D_15mv3")
+shape = SubResource("WorldBoundaryShape2D_qxy0u")
+
+[node name="LeftBound" type="Area2D" parent="Bounds"]
+
+[node name="ObjectBoundLeft" type="CollisionShape2D" parent="Bounds/LeftBound"]
+position = Vector2(-314, 27)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_qxy0u")
+
+[node name="RightBound" type="Area2D" parent="Bounds"]
+
+[node name="ObjectBoundRight" type="CollisionShape2D" parent="Bounds/RightBound"]
+position = Vector2(310, 6)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_qxy0u")
 
 [node name="Door" parent="." groups=["ResetScene"] instance=ExtResource("4_pa8r4")]
 position = Vector2(372, 4)
@@ -239,21 +256,18 @@ position = Vector2(98, 53)
 position = Vector2(122, 53)
 
 [node name="ShootingSpikes" parent="." instance=ExtResource("3_fcfvj")]
-position = Vector2(-203, 53)
-speed = -630
+position = Vector2(-191, 41)
+speed = -700
 sideways = false
 
-[node name="Checkpoint" parent="." instance=ExtResource("1_5xbjy")]
-position = Vector2(-117, 37)
-
 [node name="ShootingSpikes2" parent="." instance=ExtResource("3_fcfvj")]
-position = Vector2(74, 53)
+position = Vector2(86, 41)
 rotation = -6.28319
 speed = -630
 sideways = false
 
 [node name="ShootingSpikes3" parent="." instance=ExtResource("3_fcfvj")]
-position = Vector2(146, 53)
+position = Vector2(158, 41)
 rotation = -6.28319
-speed = -630
+speed = -700
 sideways = false

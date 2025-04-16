@@ -3,31 +3,34 @@
 [ext_resource type="Texture2D" uid="uid://bb6my6a6x3qup" path="res://assets/spike.png" id="1_ln2ik"]
 [ext_resource type="Script" uid="uid://b1fwlxf5v1v01" path="res://scripts/traps/shooting_spikes.gd" id="1_n28y5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pod7"]
-size = Vector2(16, 84)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_egy58"]
+size = Vector2(16, 100)
 
 [node name="ShootingSpikes" type="Node2D"]
 position = Vector2(-1, 0)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_n28y5")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, -8)
+[node name="Rotatable" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Rotatable"]
 texture = ExtResource("1_ln2ik")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="Rotatable"]
+position = Vector2(-8, 8)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rotatable/Hitbox"]
 position = Vector2(8, -10)
 polygon = PackedVector2Array(-8, 10, -7, 8, -6, 4.66667, -4, 0.666666, -2.66667, -2, -1, -4, 0, -5, 1, -4, 2.66667, -2, 4, 0.666666, 6, 4.66667, 7, 8, 8, 10, -7, 10)
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+position = Vector2(-8, 8)
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(8, -42)
-shape = SubResource("RectangleShape2D_2pod7")
+position = Vector2(8, -50)
+shape = SubResource("RectangleShape2D_egy58")
 
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="Rotatable/Hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="area_entered" from="PlayerDetection" to="." method="_on_player_detection_area_entered"]
