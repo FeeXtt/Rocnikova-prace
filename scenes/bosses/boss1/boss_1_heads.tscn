@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgdl0rlklxg1k"]
+
+[ext_resource type="Script" uid="uid://bsue8nqcyomlp" path="res://scenes/bosses/boss1/boss_1_heads.gd" id="1_2cfsh"]
+[ext_resource type="Texture2D" uid="uid://bubt6bxhw5t6t" path="res://assets/Boss1/ChristianProjektil.png" id="2_t81if"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8qdw"]
+radius = 7.13079
+height = 23.1924
+
+[node name="boss1 heads" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_2cfsh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.0465116, 0.0465116)
+texture = ExtResource("2_t81if")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.5, -0.04)
+scale = Vector2(0.98, 1.06)
+shape = SubResource("CapsuleShape2D_r8qdw")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]

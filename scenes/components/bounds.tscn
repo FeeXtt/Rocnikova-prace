@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnoql6hib08po"]
+
+[ext_resource type="Script" uid="uid://b0qoiufg5l1ot" path="res://scripts/bounds.gd" id="1_uq5fm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6ayib"]
+normal = Vector2(-3.46791e-08, -1)
+distance = -74.0
+
+[node name="Bounds" type="StaticBody2D"]
+script = ExtResource("1_uq5fm")
+
+[node name="PlayerBoundLeft" type="CollisionShape2D" parent="."]
+position = Vector2(-311, 28)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_6ayib")
+
+[node name="PlayerBoundRight" type="CollisionShape2D" parent="."]
+position = Vector2(310, 6)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_6ayib")
+
+[node name="LeftBound" type="Area2D" parent="."]
+position = Vector2(3, 1)
+
+[node name="ObjectBoundLeft" type="CollisionShape2D" parent="LeftBound"]
+position = Vector2(-314, 27)
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_6ayib")
+
+[node name="RightBound" type="Area2D" parent="."]
+
+[node name="ObjectBoundRight" type="CollisionShape2D" parent="RightBound"]
+position = Vector2(310, 6)
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_6ayib")
+
+[node name="BottomBound" type="Area2D" parent="."]
+position = Vector2(3, 1)
+
+[node name="ObjectBoundLeft" type="CollisionShape2D" parent="BottomBound"]
+position = Vector2(-3, 135)
+shape = SubResource("WorldBoundaryShape2D_6ayib")

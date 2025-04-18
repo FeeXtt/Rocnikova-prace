@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cd13wjqbfrp03" path="res://assets/Boss1/Cisco-Packet-Tracer.webp" id="1_6ms2u"]
 
 [node name="boss1 bullet" type="Node2D"]
+scale = Vector2(0.505, 0.505)
 script = ExtResource("1_3pkm2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -11,11 +12,11 @@ position = Vector2(1, 0)
 scale = Vector2(0.0465116, 0.0465116)
 texture = ExtResource("1_6ms2u")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
 position = Vector2(1, 0)
 scale = Vector2(1.28, 1.32)
 polygon = PackedVector2Array(-2.34375, -9.09091, -3.125, -6.81818, -4.68751, -6.06061, -6.25001, -5.30303, -7.81251, -3.0303, -8.59376, -0.757576, -7.03126, 2.27273, -4.68751, 3.78788, -1.19209e-07, 3.78788, 4.68751, 9.09091, 5.46876, 9.09091, 5.46876, 8.33334, 1.5625, 3.0303, 2.34375, 2.27273, 3.125, 0.757576, 8.59376, -1.51515, 8.59376, -7.57576)
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]

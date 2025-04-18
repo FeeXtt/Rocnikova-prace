@@ -40,6 +40,6 @@ func _input(event) -> void:
 	if event.is_action_pressed("Reset"):
 		doorLevel = level
 		get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
-	
-	
+	#
+	#
 	

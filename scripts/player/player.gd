@@ -94,7 +94,7 @@ func _process(_delta: float) -> void:
 		var bullet_instance = BULLET.instantiate()
 		get_tree().root.add_child(bullet_instance)
 		var offset_distance := 12
-		var offset := Vector2(offset_distance * last_direction, 0) 
+		var offset := Vector2(offset_distance * last_direction, -1) 
 		bullet_instance.global_position = position + offset
 		bullet_instance.set_direction(last_direction)
 		AudioManagerScene.shoot_play()

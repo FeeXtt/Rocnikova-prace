@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2a0do1xxmiph"]
+
+[ext_resource type="Script" uid="uid://becgostxbxwcy" path="res://scripts/bosses/boss1/boss_1_words.gd" id="1_1kn3f"]
+[ext_resource type="Texture2D" uid="uid://cb5hamc5le1sv" path="res://assets/Boss1/actually.png" id="2_1kn3f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd317"]
+size = Vector2(45.5446, 9.90099)
+
+[node name="boss1 words" type="Node2D"]
+scale = Vector2(0.505, 0.505)
+script = ExtResource("1_1kn3f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(0.0465116, 0.0465116)
+texture = ExtResource("2_1kn3f")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.79, 0.285)
+shape = SubResource("RectangleShape2D_qd317")
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_area_2d_area_entered"]

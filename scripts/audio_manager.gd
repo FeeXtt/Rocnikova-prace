@@ -3,6 +3,7 @@ extends Node
 @onready var music = $Music
 @onready var jump = $JumpingSound
 @onready var shoot = $ShootingSound
+@onready var shotgunfire = $ShotgunFire
 var paused_position
 
 
@@ -29,3 +30,6 @@ func jump_play():
 func play_music_boss_level(stream: AudioStream):
 		music.stream = stream
 		music.play()
+func play_shotgun_fire():
+	shotgunfire.play()
+	
