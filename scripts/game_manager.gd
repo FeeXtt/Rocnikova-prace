@@ -9,6 +9,16 @@ var player;
 var level: int;
 var doorLevel: int;
 var saveButtKeybinVisible: bool
+
+var constantDoubleJump = false
+var SPEED = 200.0
+var JUMP_VELOCITY = -350.0
+var MAX_JUMP_HOLD_TIME = 0.5
+var BASE_JUMP_FORCE: float = -350.0
+var MAX_JUMP_FORCE = -500.0
+var DOUBLE_JUMP_FORCE: float = -350.0
+var GRAVITY = 1
+
 @onready var audio_player = get_node("AudioPlayer")
 
 func save():

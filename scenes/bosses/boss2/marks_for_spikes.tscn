@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://hv07f730886k"]
+
+[ext_resource type="Texture2D" uid="uid://cqe5l814hcyvf" path="res://assets/WarningSign/WarningSign06.png" id="1_7k71d"]
+
+[node name="Marks1" type="Node2D"]
+
+[node name="Mark1" type="Sprite2D" parent="."]
+position = Vector2(-12, -10)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_7k71d")
+
+[node name="Mark2" type="Sprite2D" parent="."]
+position = Vector2(12, -10)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_7k71d")

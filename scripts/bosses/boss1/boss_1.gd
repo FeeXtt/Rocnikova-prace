@@ -1,7 +1,7 @@
 extends Node2D
 class_name Boss
 
-@export var max_health := 150;
+@export var max_health := 1;
 var current_health := max_health
 
 var current_phase = true

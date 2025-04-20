@@ -45,11 +45,6 @@ size_flags_vertical = 6
 text = "Mouse & Keyboard binds
 "
 
-[node name="ControllerSettingsButton" type="Button" parent="Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Controler binds"
-
 [node name="BackButton" type="Button" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
@@ -57,5 +52,4 @@ text = "Back"
 
 [connection signal="pressed" from="Panel/VBoxContainer/AudioButton" to="." method="_on_audio_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/KeyboardSettingButton" to="." method="_on_keyboard_setting_button_pressed"]
-[connection signal="pressed" from="Panel/VBoxContainer/ControllerSettingsButton" to="." method="_on_controller_settings_button_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

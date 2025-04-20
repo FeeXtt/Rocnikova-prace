@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d2mc5qt7xaw2i" path="res://scenes/traps/spike.tscn" id="12_6xwso"]
 [ext_resource type="PackedScene" uid="uid://dcv3j55dqcc1l" path="res://scenes/components/exclamation_mark.tscn" id="14_j14br"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vvoq0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0y7y4"]
 texture = ExtResource("2_vvoq0")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -113,14 +113,14 @@ texture = ExtResource("2_vvoq0")
 16:4/0 = 0
 16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqnj0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gruok"]
 texture = ExtResource("3_tqnj0")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dwyms"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h717f"]
 texture = ExtResource("4_dwyms")
 2:0/0 = 0
 3:0/0 = 0
@@ -156,7 +156,7 @@ texture = ExtResource("4_dwyms")
 3:7/0 = 0
 4:7/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xwso"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8eod"]
 texture = ExtResource("6_tqnj0")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -9483,7 +9483,7 @@ texture = ExtResource("6_tqnj0")
 110:41/0 = 0
 110:41/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j14br"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sfnul"]
 texture = ExtResource("7_5ke18")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -12288,11 +12288,11 @@ texture = ExtResource("7_5ke18")
 
 [sub_resource type="TileSet" id="TileSet_5ke18"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_vvoq0")
-sources/1 = SubResource("TileSetAtlasSource_tqnj0")
-sources/2 = SubResource("TileSetAtlasSource_dwyms")
-sources/3 = SubResource("TileSetAtlasSource_6xwso")
-sources/4 = SubResource("TileSetAtlasSource_j14br")
+sources/0 = SubResource("TileSetAtlasSource_0y7y4")
+sources/1 = SubResource("TileSetAtlasSource_gruok")
+sources/2 = SubResource("TileSetAtlasSource_h717f")
+sources/3 = SubResource("TileSetAtlasSource_l8eod")
+sources/4 = SubResource("TileSetAtlasSource_sfnul")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0y7y4"]
 

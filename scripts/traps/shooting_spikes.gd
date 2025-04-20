@@ -1,5 +1,8 @@
+
 @tool
+class_name ShootingSpike
 extends Node2D
+
 
 @export var speed: = -300
 @export var sideways = true

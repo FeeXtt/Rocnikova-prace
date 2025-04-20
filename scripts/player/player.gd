@@ -3,12 +3,12 @@ extends CharacterBody2D
 class_name Player
 
 const BULLET = preload("res://scenes/player/bullet.tscn")
-const SPEED = 300.0
-const JUMP_VELOCITY = -350.0
-const MAX_JUMP_HOLD_TIME = 0.5
-const BASE_JUMP_FORCE = -350.0
-const MAX_JUMP_FORCE = -500.0
-const DOUBLE_JUMP_FORCE = -350.0
+#var SPEED = GameManager.SPEED
+#var JUMP_VELOCITY = GameManager.JUMP_VELOCITY
+#var MAX_JUMP_HOLD_TIME = GameManager.MAX_JUMP_HOLD_TIME
+#var BASE_JUMP_FORCE = GameManager.BASE_JUMP_FORCE
+#var MAX_JUMP_FORCE = GameManager.MAX_JUMP_FORCE
+#var DOUBLE_JUMP_FORCE = GameManager.DOUBLE_JUMP_FORCE
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -36,12 +36,12 @@ func _ready():
 #MOVEMENT
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y += gravity * delta
+		velocity.y += gravity * delta * GameManager.GRAVITY
 	else:
 		can_double_jump = true
 	var direction = Input.get_axis("MoveLeft", "MoveRight")
 	if direction != 0 and not is_holding_jump:
-		velocity.x = direction * SPEED
+		velocity.x = direction * GameManager.SPEED
 		last_direction = sign(direction)
 		sprite.flip_h = direction < 0
 		if not animation_player.is_playing() or animation_player.current_animation != "walk":
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	elif not is_holding_jump:
 		if Input.is_action_just_pressed("fire"):
 			animation_player.play("fire")
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, GameManager.SPEED)
 		if not animation_player.is_playing() or animation_player.current_animation != "idle" && animation_player.current_animation != "fire":
 			animation_player.play("idle")
 	
@@ -60,8 +60,9 @@ func _physics_process(delta: float) -> void:
 			jump_timer = 0.0
 		elif can_double_jump:
 			AudioManagerScene.jump_play()
-			velocity.y = DOUBLE_JUMP_FORCE
-			can_double_jump = false
+			velocity.y = GameManager.DOUBLE_JUMP_FORCE
+			if !GameManager.constantDoubleJump:
+				can_double_jump = false
 			
 	
 	if Input.is_action_pressed("jump") and is_jumping:
@@ -73,7 +74,7 @@ func _physics_process(delta: float) -> void:
 			if not animation_player.is_playing() or animation_player.current_animation != "beforejump":
 				animation_player.play("beforejump")
 		
-		if jump_timer < MAX_JUMP_HOLD_TIME:
+		if jump_timer < GameManager.MAX_JUMP_HOLD_TIME:
 			jump_timer += delta
 	
 	if Input.is_action_just_released("jump") and is_jumping:
@@ -82,7 +83,7 @@ func _physics_process(delta: float) -> void:
 		if not animation_player.is_playing() or animation_player.current_animation != "afterjump":
 			animation_player.play("afterjump")
 		
-		var jump_strength = lerp(BASE_JUMP_FORCE, MAX_JUMP_FORCE, jump_timer / MAX_JUMP_HOLD_TIME)
+		var jump_strength = lerp(GameManager.BASE_JUMP_FORCE, GameManager.MAX_JUMP_FORCE, jump_timer / GameManager.MAX_JUMP_HOLD_TIME)
 		velocity.y = jump_strength
 		is_jumping = false
 

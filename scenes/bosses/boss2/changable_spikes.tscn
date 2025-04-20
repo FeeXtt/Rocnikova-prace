@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvrie6x6h0crn"]
+
+[ext_resource type="PackedScene" uid="uid://d2mc5qt7xaw2i" path="res://scenes/traps/spike.tscn" id="1_td7co"]
+
+[node name="ChangableSpikes1" type="Node2D"]
+
+[node name="Spike15" parent="." instance=ExtResource("1_td7co")]
+position = Vector2(-24, 0)
+
+[node name="Spike16" parent="." instance=ExtResource("1_td7co")]

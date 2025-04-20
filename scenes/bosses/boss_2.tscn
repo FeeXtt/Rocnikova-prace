@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwu3ce1tlhrcr"]
+
+[ext_resource type="Texture2D" uid="uid://bl0qgihyg0a7n" path="res://assets/Boss2/RadekHlava.png" id="1_anxjj"]
+[ext_resource type="Script" uid="uid://etcgwtsr3vto" path="res://scripts/bosses/boss2/boss_2.gd" id="1_m5lyw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_anxjj"]
+radius = 22.0
+height = 72.0
+
+[node name="boss2" type="Node2D"]
+script = ExtResource("1_m5lyw")
+
+[node name="RadekHlava" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.10968, 0.10968)
+texture = ExtResource("1_anxjj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 2)
+shape = SubResource("CapsuleShape2D_anxjj")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
