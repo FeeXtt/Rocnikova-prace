@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://q5s33hrgvusk"]
+
+[ext_resource type="Script" uid="uid://bt6xvnu14qx2h" path="res://scenes/bosses/boss2/beam.gd" id="1_8l6ul"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_esd6p"]
+b = Vector2(87, 0)
+
+[node name="Beam" type="Node2D"]
+script = ExtResource("1_8l6ul")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(94, 0)
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 88, 0)
+
+[node name="HitBoxArea" type="Area2D" parent="Line2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Line2D/HitBoxArea"]
+shape = SubResource("SegmentShape2D_esd6p")
+
+[node name="Line2D2" type="Line2D" parent="."]

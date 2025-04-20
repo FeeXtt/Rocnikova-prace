@@ -29,3 +29,5 @@ func _on_boss_tree_exited() -> void:
 	warningmark_platform2.visible = false
 	healthbar.visible = false
 	
+	
+	

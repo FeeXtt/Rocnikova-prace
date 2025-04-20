@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl6o2s6eqcto"]
+
+[ext_resource type="Script" uid="uid://bqdf0j4b33oak" path="res://scripts/bosses/boss2/c#_bullet.gd" id="1_gx7r5"]
+[ext_resource type="Texture2D" uid="uid://dqkv6kpg6l4k7" path="res://assets/Boss2/C_Sharp_Logo.png" id="1_wscb2"]
+
+[node name="C#_Bullet" type="Node2D"]
+script = ExtResource("1_gx7r5")
+
+[node name="C#logo" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 4.76837e-07)
+scale = Vector2(0.0114714, 0.0114714)
+texture = ExtResource("1_wscb2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -6, -5, -3, -5, 3, 0, 6, 5, 3, 5, -3)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -103,4 +103,5 @@ func _process(_delta: float) -> void:
 
 func die():
 	print("die")
+	
 	GameManager.respawn_player()

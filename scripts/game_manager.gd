@@ -43,13 +43,17 @@ func load_data():
 	
 
 func respawn_player():
-	#doorLevel = level
-	#get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
-	pass
-func _input(event) -> void:
-	if event.is_action_pressed("Reset"):
-		doorLevel = level
-		get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
-	#
+	doorLevel = level
+	for node in get_tree().get_nodes_in_group("projectiles"):
+		node.queue_free()
+	for node in get_tree().get_nodes_in_group("marks"):
+		node.queue_free()
+	get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
+	#pass
+#func _input(event) -> void:
+	#if event.is_action_pressed("Reset"):
+		#doorLevel = level
+		#get_tree().change_scene_to_file("res://scenes/levels/level_"+str(level)+".tscn")
+	##
 	#
 	

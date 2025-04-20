@@ -44,6 +44,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		health_bar.update_healthbar(current_health, max_health)
 		if current_health <= 0:
 			queue_free()
+	if area.get_parent() is Player:
+		area.get_parent().die()
 
 
 #PHASE 1

@@ -12376,6 +12376,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Boss" parent="." instance=ExtResource("9_vvoq0")]
 position = Vector2(250, -49)
+max_health = 150
 
 [node name="HealthBar" parent="." instance=ExtResource("10_tqnj0")]
 z_index = 6

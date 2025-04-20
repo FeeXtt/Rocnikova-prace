@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be2i3f1o1qrro"
+path="res://.godot/imported/🎵 “Null Reference Blues” 🎵.mp3-504b0f2859306e3aa6f960e010c0d40a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Music/🎵 “Null Reference Blues” 🎵.mp3"
+dest_files=["res://.godot/imported/🎵 “Null Reference Blues” 🎵.mp3-504b0f2859306e3aa6f960e010c0d40a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch703vcvfcmqr"]
+
+[ext_resource type="Script" uid="uid://dlrsatnvqnuca" path="res://scripts/bosses/boss2/radek_head.gd" id="1_1ux4e"]
+[ext_resource type="Texture2D" uid="uid://bqn1cv2srmhpq" path="res://assets/radekhlava.png" id="1_ig748"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ig748"]
+radius = 60.3077
+height = 189.538
+
+[node name="RadekHead" type="Node2D"]
+script = ExtResource("1_1ux4e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.116071, 0.116071)
+texture = ExtResource("1_ig748")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.116071, 0.116071)
+shape = SubResource("CapsuleShape2D_ig748")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

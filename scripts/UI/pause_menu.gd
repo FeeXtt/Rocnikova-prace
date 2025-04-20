@@ -46,7 +46,12 @@ func _on_main_menu_pressed() -> void:
 	if paused:
 		AudioManagerScene.stop_music()
 		get_tree().paused = false
+		for node in get_tree().get_nodes_in_group("marks"):
+			node.queue_free()
+		for node in get_tree().get_nodes_in_group("projectiles"):
+			node.queue_free()
 		get_tree().change_scene_to_file("res://scenes/UI/main_menu.tscn")
+		
 		
 
 

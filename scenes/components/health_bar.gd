@@ -1,5 +1,5 @@
 extends Control
-@export var max_value = 100
+@export var max_value = 200
 func _ready() -> void:
 	$HealthBar.max_value = max_value
 

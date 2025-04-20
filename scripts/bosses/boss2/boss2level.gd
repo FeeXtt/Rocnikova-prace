@@ -1,6 +1,7 @@
 extends Node2D
 var level = 11
 @export var music_stream = preload("res://assets/audio/Music/CiscoIsShite.mp3")
+@onready var bossbound = $BossBound
 
 
 func _ready() -> void:
@@ -12,4 +13,10 @@ func _ready() -> void:
 	AudioManagerScene.play_music_boss_level(music_stream)
 	
 	
+
+
+func _on_boss_2_child_exiting_tree(node: Node) -> void:
+	for idk in get_tree().get_nodes_in_group("marks"):
+		idk.queue_free()
+	bossbound.queue_free()
 	

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://coymgsxqpbk02"
+path="res://.godot/imported/🎵 _Heavy As Fk (C# Breakdown)___ 🎵 (1).mp3-4888d850d281befd6ee32952331bdf5f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Music/🎵 _Heavy As Fk (C# Breakdown)___ 🎵 (1).mp3"
+dest_files=["res://.godot/imported/🎵 _Heavy As Fk (C# Breakdown)___ 🎵 (1).mp3-4888d850d281befd6ee32952331bdf5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

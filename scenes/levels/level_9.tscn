@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=4 uid="uid://ddu14k254crck"]
+[gd_scene load_steps=21 format=4 uid="uid://ddu14k254crck"]
 
 [ext_resource type="Script" uid="uid://c6tenusqy5s6k" path="res://scripts/levels/audio_handler.gd" id="1_v1y24"]
+[ext_resource type="AudioStream" uid="uid://coymgsxqpbk02" path="res://assets/audio/Music/🎵 _Heavy As Fk (C# Breakdown)___ 🎵 (1).mp3" id="2_c68rt"]
 [ext_resource type="Texture2D" uid="uid://def5e7d64uy0d" path="res://assets/tilemapSprites/Tilemaps/Png Files/sandbrick_grass_alt_tileset_1.png" id="2_ylwrn"]
 [ext_resource type="Texture2D" uid="uid://plg4h8v8bw5i" path="res://assets/tilemapSprites/Tilemaps/Png Files/sandbrick_grass_alt_tileset_1_tmavsi.png" id="3_c68rt"]
 [ext_resource type="Texture2D" uid="uid://2h8n6coc42lr" path="res://assets/sky.png" id="4_b7r0f"]
@@ -275,6 +276,7 @@ distance = -74.0
 
 [node name="level9" type="Node2D"]
 script = ExtResource("1_v1y24")
+music_stream = ExtResource("2_c68rt")
 
 [node name="TileMap" type="TileMap" parent="."]
 light_mask = 3
