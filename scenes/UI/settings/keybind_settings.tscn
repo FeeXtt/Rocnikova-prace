@@ -34,23 +34,6 @@ offset_right = 267.0
 offset_bottom = 538.0
 grow_horizontal = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-text = "MoveUp"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="InputButton" parent="Panel/VBoxContainer/HBoxContainer" instance=ExtResource("2_sbl4r")]
-layout_mode = 2
-action_name = "MoveUp"
-indexInArray = 0
-
 [node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
@@ -64,22 +47,6 @@ vertical_alignment = 1
 
 [node name="InputButton" parent="Panel/VBoxContainer/HBoxContainer2" instance=ExtResource("2_sbl4r")]
 layout_mode = 2
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 6
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "MoveDown"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="InputButton" parent="Panel/VBoxContainer/HBoxContainer3" instance=ExtResource("2_sbl4r")]
-layout_mode = 2
-action_name = "MoveDown"
-indexInArray = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2

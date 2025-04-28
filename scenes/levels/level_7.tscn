@@ -440,10 +440,12 @@ detection_length = 70.0
 [node name="MovingObejct3" parent="." instance=ExtResource("12_nonn3")]
 position = Vector2(-107, -57)
 target_position = Vector2(-107, -125)
+move_speed = 150.0
 
 [node name="MovingObejct4" parent="." instance=ExtResource("12_nonn3")]
 position = Vector2(-83, -57)
 target_position = Vector2(-83, -125)
+move_speed = 150.0
 
 [node name="MovingObejct5" parent="." instance=ExtResource("12_nonn3")]
 position = Vector2(139, 109)

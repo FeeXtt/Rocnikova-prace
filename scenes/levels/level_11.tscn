@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://ck876ow2fe1qi"]
+[gd_scene load_steps=21 format=4 uid="uid://ck876ow2fe1qi"]
 
 [ext_resource type="Script" uid="uid://u0kbion0ergk" path="res://scripts/bosses/boss2/boss2level.gd" id="1_yf4k5"]
 [ext_resource type="AudioStream" uid="uid://be2i3f1o1qrro" path="res://assets/audio/Music/🎵 “Null Reference Blues” 🎵.mp3" id="2_c8dgj"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bwu3ce1tlhrcr" path="res://scenes/bosses/boss_2.tscn" id="10_4fty2"]
 [ext_resource type="PackedScene" uid="uid://c7bs7nhylfkxa" path="res://scenes/components/door.tscn" id="10_4u6hg"]
 [ext_resource type="PackedScene" uid="uid://dfd7l808w0xe5" path="res://scenes/UI/pause_menu.tscn" id="11_ajc4v"]
+[ext_resource type="PackedScene" uid="uid://c1cxh703svc7t" path="res://scenes/UI/Ending.tscn" id="11_yf4k5"]
 [ext_resource type="PackedScene" uid="uid://dnw43i7la7dxa" path="res://scenes/components/health_bar.tscn" id="13_m2041"]
 [ext_resource type="PackedScene" uid="uid://d2mc5qt7xaw2i" path="res://scenes/traps/spike.tscn" id="14_83ajl"]
 
@@ -328,6 +329,9 @@ offset_top = -3.0
 offset_right = -10.0
 offset_bottom = -3.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Ending" parent="CanvasLayer" instance=ExtResource("11_yf4k5")]
+visible = false
 
 [node name="HealthBar" parent="." instance=ExtResource("13_m2041")]
 z_index = 9
